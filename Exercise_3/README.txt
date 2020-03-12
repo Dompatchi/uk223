@@ -1,5 +1,5 @@
 In this exercise the goal is to create the service layer for every business object.
-The dokus of this exercise is to understand services. 
+The focus of this exercise is to understand services and outsource the logic in the controllers out into the service layer. 
 As usual, in this project there are three examples with already built services: Role, authority and user.
 The naming convention might be misleading right now, but it is called find instead of retrieve for a reason which gains relevance in the next exercise.
 
