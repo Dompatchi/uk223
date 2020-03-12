@@ -3,6 +3,8 @@ The focus in this exercise is to understand controllers. Check the provided "Auc
 The project provided in this task already has three objects built as an example, role, authority and user.
 Use these objects as a template on how to construct the missing objects.
 
+It is to be noted that in our enviroment we return the object in setters.
+
 As a reminder, CRUD stands for: Create, Retrieve, Update and Delete
 
 Short description of the exercise:
