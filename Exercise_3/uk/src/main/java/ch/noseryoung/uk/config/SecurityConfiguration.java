@@ -6,7 +6,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 // This class handles basic security concerns
-
 @Configuration
 @EnableWebSecurity
 class SecurityConfiguration extends WebSecurityConfigurerAdapter {

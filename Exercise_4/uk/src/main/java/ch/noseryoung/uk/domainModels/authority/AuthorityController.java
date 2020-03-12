@@ -20,7 +20,7 @@ public class AuthorityController {
         this.authorityService = authorityService;
     }
 
-    // This endpoint creates a new authority with the data given, currently this process is being mocked
+    // This endpoint creates a new authority with the data given
     @PostMapping({"/", ""})
     public ResponseEntity<Authority> create(@RequestBody Authority authority) {
         return new ResponseEntity<>(authorityService.create(authority), HttpStatus.CREATED);
@@ -39,13 +39,13 @@ public class AuthorityController {
         return new ResponseEntity<>(authorityService.findById(id), HttpStatus.OK);
     }
 
-    // This endpoint updates an existing authority with the id and data given, currently this process is being mocked
+    // This endpoint updates an existing authority with the id and data given
     @PutMapping("/{id}")
     public ResponseEntity<Authority> updateById(@PathVariable int id, @RequestBody Authority authority) {
         return new ResponseEntity<>(authorityService.updateById(id, authority), HttpStatus.OK);
     }
 
-    // This endpoint deletes an existing authority with the id given, currently this process is being mocked
+    // This endpoint deletes an existing authority with the id given
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable int id) {
         authorityService.deleteById(id);

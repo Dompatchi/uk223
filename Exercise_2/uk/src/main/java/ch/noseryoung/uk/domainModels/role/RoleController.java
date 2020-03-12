@@ -3,11 +3,9 @@ package ch.noseryoung.uk.domainModels.role;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
-
 import static ch.noseryoung.uk.domainModels.authority.AuthorityController.AUTHORITY_1;
 import static ch.noseryoung.uk.domainModels.authority.AuthorityController.AUTHORITY_2;
 

@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
-
 import static ch.noseryoung.uk.domainModels.role.RoleController.ROLE_1;
 import static ch.noseryoung.uk.domainModels.role.RoleController.ROLE_2;
 

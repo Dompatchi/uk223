@@ -20,7 +20,7 @@ public class RoleController {
         this.roleService = roleService;
     }
 
-    // This endpoint creates a new role with the data given, currently this process is being mocked
+    // This endpoint creates a new role with the data given
     @PostMapping({"/", ""})
     public ResponseEntity<Role> create(@RequestBody Role role) {
         return new ResponseEntity<>(roleService.create(role), HttpStatus.CREATED);
@@ -38,14 +38,14 @@ public class RoleController {
         return new ResponseEntity<>(roleService.findById(id), HttpStatus.OK);
     }
 
-    // This endpoint updates an existing role with the id and data given, currently this process is being mocked
+    // This endpoint updates an existing role with the id and data given
     @PutMapping("/{id}")
     public ResponseEntity<Role> updateById(@PathVariable int id, @RequestBody Role role) {
         role.setName("NewName");
         return new ResponseEntity<>(role, HttpStatus.OK);
     }
 
-    // This endpoint deletes an existing role with the id given, currently this process is being mocked
+    // This endpoint deletes an existing role with the id given
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable int id) {
         roleService.deleteById(id);
