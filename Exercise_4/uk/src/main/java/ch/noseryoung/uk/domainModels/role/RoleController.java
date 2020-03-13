@@ -41,8 +41,7 @@ public class RoleController {
     // This endpoint updates an existing role with the id and data given
     @PutMapping("/{id}")
     public ResponseEntity<Role> updateById(@PathVariable int id, @RequestBody Role role) {
-        role.setName("NewName");
-        return new ResponseEntity<>(role, HttpStatus.OK);
+        return new ResponseEntity<>(roleService.updateById(id, role), HttpStatus.OK);
     }
 
     // This endpoint deletes an existing role with the id given
