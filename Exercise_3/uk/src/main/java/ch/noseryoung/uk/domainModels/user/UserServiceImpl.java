@@ -35,19 +35,19 @@ public class UserServiceImpl implements UserService {
 
     private static final List<User> USERS = Arrays.asList(USER_1, USER_2);
 
-    // The logic for creating a new authority
+    // The logic for creating a new user
     @Override
     public User create(User user) {
         return user;
     }
 
-    // The logic for retrieving all authorities
+    // The logic for retrieving all users
     @Override
     public List<User> findAll() {
         return USERS;
     }
 
-    // logic for retrieving a single authority with a given id
+    // The logic for retrieving a single user with a given id
     @Override
     public User findById(int id) {
         User chosenUser = new User();
@@ -61,14 +61,14 @@ public class UserServiceImpl implements UserService {
         return chosenUser;
     }
 
-    // The logic for updating an existing authority with a given id and data
+    // The logic for updating an existing user with a given id and data
     @Override
     public User updateById(int id, User user) {
         user.setUsername("NewName");
         return user;
     }
 
-    // The logic for deleting an authority with a given id
+    // The logic for deleting a user with a given id
     @Override
     public void deleteById(int id) {
         System.out.println("The delete method has been called with the id: " + id);

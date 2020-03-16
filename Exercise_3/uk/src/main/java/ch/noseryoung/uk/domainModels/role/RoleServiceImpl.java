@@ -33,7 +33,7 @@ public class RoleServiceImpl implements RoleService {
         return ROLES;
     }
 
-    // logic for retrieving a single authority with a given id
+    // The logic for retrieving a single role with a given id
     @Override
     public Role findById(int id) {
         Role chosenRole = new Role();
@@ -47,14 +47,14 @@ public class RoleServiceImpl implements RoleService {
         return chosenRole;
     }
 
-    // The logic for updating an existing authority with a given id and data
+    // The logic for updating an existing role with a given id and data
     @Override
     public Role updateById(int id, Role role) {
         role.setName("NewName");
         return role;
     }
 
-    // The logic for deleting an authority with a given id
+    // The logic for deleting a role with a given id
     @Override
     public void deleteById(int id) {
         System.out.println("The delete method has been called with the id: " + id);

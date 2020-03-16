@@ -1,6 +1,8 @@
 package ch.noseryoung.uk.domainModels.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -23,7 +25,7 @@ public class UserServiceImpl implements UserService {
         return userRepository.save(user);
     }
 
-    // The logic for retrieving all users
+    // The logic for retrieving all user
     @Override
     public List<User> findAll() {
         return userRepository.findAll();
@@ -31,13 +33,13 @@ public class UserServiceImpl implements UserService {
 
     // The logic for retrieving a single user with a given id
     @Override
-    public User findById(int id) {
+    public User findById(String id) {
         return userRepository.findById(id).get();
     }
 
     // The logic for updating an existing user with a given id and data
     @Override
-    public User updateById(int id, User user) {
+    public User updateById(String id, User user) {
         if(userRepository.existsById(id)) {
             user.setId(id);
             userRepository.save(user);
@@ -48,10 +50,25 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    // The logic for deleting a user with a given id
+    // The logic for deleting an authority with a given id
     @Override
-    public void deleteById(int id) {
+    public void deleteById(String id) {
         userRepository.deleteById(id);
+    }
+
+    // This method is needed for login purposes
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        try {
+            return new UserDetailsImpl(findByUsername(username));
+        } catch (NoSuchElementException e) {
+            throw new UsernameNotFoundException(e.getMessage());
+        }
+    }
+
+    // This method finds a user by it's username, it's private as it's never needed outside this class
+    private User findByUsername(String username) {
+        return userRepository.findByUsernameAndLockedFalse(username);
     }
 
 }

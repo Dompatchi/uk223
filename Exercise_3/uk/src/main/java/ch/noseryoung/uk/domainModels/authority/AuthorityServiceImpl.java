@@ -29,7 +29,7 @@ public class AuthorityServiceImpl implements AuthorityService {
         return AUTHORITIES;
     }
 
-    // logic for retrieving a single authority with a given id
+    // The logic for retrieving a single authority with a given id
     @Override
     public Authority findById(int id) {
         Authority chosenAuthority = new Authority();
