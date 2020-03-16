@@ -17,25 +17,25 @@ public class UserServiceImpl implements UserService {
         this.userRepository = userRepository;
     }
 
-    // The logic for creating a new authority
+    // The logic for creating a new user
     @Override
     public User create(User user) {
         return userRepository.save(user);
     }
 
-    // The logic for retrieving all authorities
+    // The logic for retrieving all users
     @Override
     public List<User> findAll() {
         return userRepository.findAll();
     }
 
-    // logic for retrieving a single authority with a given id
+    // The logic for retrieving a single user with a given id
     @Override
     public User findById(int id) {
         return userRepository.findById(id).get();
     }
 
-    // The logic for updating an existing authority with a given id and data
+    // The logic for updating an existing user with a given id and data
     @Override
     public User updateById(int id, User user) {
         if(userRepository.existsById(id)) {
@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    // The logic for deleting an authority with a given id
+    // The logic for deleting a user with a given id
     @Override
     public void deleteById(int id) {
         userRepository.deleteById(id);
