@@ -21,8 +21,15 @@ As a next step you have to implement the security into your own application, be 
   For more information on this specific topic check the included document "JWT_in_Postman.docx"
 
 Now for implementing JWTs onto your own application follow these instructions:
-1. 
+1. Change the IDs from ints to Strings, this includes changing the business objects, the repositories, the services,
+   the service implementations, the DTOs and the controllers
+2. Create the files mentioned above, for comparisons check the provided example
+3. Start postman and do a testrun, make sure you have a user already in your database
 
+Beware that once the security measures are in place the passwords will be encrypted, 
+this means simply creating the user in the database won't work. In the security config under the method "cofigure" you'll find 
+ant-matchers with end points such as "/swagger-ui.html". Simply add ', "/**"' behind those ant-matchers to deactivate the
+security.
 
 Additional exercise:
 How could we make changes like this easier to handle? Construct some ideas.
