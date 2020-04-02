@@ -47,7 +47,7 @@ public class User {
     // In many to many relations the data type is preferred to be a Set for performance, in one to many and many to one
     // relations the preferred data type are lists.
     @JoinTable(
-            name = "role_authority",
+            name = "users_role",
             joinColumns = @JoinColumn(name = "users_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
